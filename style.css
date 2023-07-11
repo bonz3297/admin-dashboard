@@ -1,0 +1,245 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 4.5fr;
+	grid-template-rows: max-content 1fr;
+	grid-template-areas:
+		'sidebar header'
+		'sidebar main';
+}
+
+.sidebar {
+	grid-area: sidebar;
+	background-color: rgb(0, 174, 255);
+	padding: 20px;
+	display: grid;
+	grid-template-rows: 10vh 1fr;
+}
+
+.header {
+	grid-area: header;
+	background-color: rgb(196, 190, 190);
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(10px, 1fr));
+	grid-template-rows: max-content max-content;
+	gap: 15px;
+	align-items: center;
+}
+
+.main {
+	grid-area: main;
+	background-color: grey;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 2rem;
+}
+
+.sidebar .dashboard-header {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	align-items: center;
+}
+
+.sidebar .dashboard-content ul {
+	display: grid;
+	gap: 15px;
+}
+
+.sidebar .dashboard-content ul li {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 15px;
+	align-items: center;
+}
+
+li.list-break {
+	margin-top: 2rem;
+}
+
+.main > * {
+	display: grid;
+	gap: 10px;
+}
+
+.projects-cont {
+	grid-row: 1/4;
+	display: grid;
+	grid-template-rows: min-content 1fr;
+}
+
+.projects {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card {
+	background-color: azure;
+	padding: 1rem;
+	display: grid;
+	gap: 0.5rem;
+}
+
+.project-card .card-actions {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(min-content, 15%));
+	justify-items: center;
+	justify-content: end;
+	align-items: end;
+}
+
+.announcements {
+	background-color: azure;
+	padding: 1rem;
+	display: grid;
+	gap: 1rem;
+}
+
+.announcement + .announcement {
+	border-top: 1px solid gray;
+}
+
+.trendings {
+	background-color: azure;
+	padding: 1rem;
+	display: grid;
+	gap: 1rem;
+}
+
+.trending-user + .trending-user {
+	border-top: 1px solid gray;
+}
+
+.header .user-info {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+
+.user-info button {
+	justify-self: end;
+}
+
+.user-info > div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+}
+
+.header .search {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.search img {
+	justify-self: end;
+}
+
+.header .user-greeting {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+}
+
+.user-greeting img {
+	justify-self: center;
+}
+
+.header .header-buttons {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+}
+
+.header-buttons button:nth-child(1) {
+	width: 5rem;
+	justify-self: end;
+}
+
+.header-buttons button:nth-child(2) {
+	width: 5rem;
+	justify-self: center;
+}
+
+.header-buttons button:nth-child(3) {
+	width: 5rem;
+	justify-self: start;
+}
